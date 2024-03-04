@@ -8,6 +8,10 @@ const PORT = 3000;
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("<h1>Server is running</h1>");
+});
+
 app.post("/send-sms", async (req, res) => {
   const { message, to } = req.body;
 
